@@ -18,19 +18,17 @@ fn main() {
     // Shadowing variables
     // Declare a new variable with the same name as an existing variable
     // New variables "shadows" the previous one
-    let newPlanet = "Jupiter";
+    let new_planet = "Jupiter";
     {
-        println!("newPlanet is {newPlanet}");
-        let newPlanet = "Saturn";
-        println!("newPlanet is {newPlanet}");
-        let mut newPlanet = 4; // mutability
-        println!("newPlanet is {newPlanet}");
-        newPlanet = 5;
-        println!("newPlanet is {newPlanet}");
+        println!("new_planet is {new_planet}");
+        let new_planet = "Saturn";
+        println!("new_planet is {new_planet}");
+        let mut new_planet = 4; // mutability
+        println!("new_planet is {new_planet}");
+        new_planet = 5;
+        println!("new_planet is {new_planet}");
     }
-    println!("newPlanet is {newPlanet}");
-
-
+    println!("new_planet is {new_planet}");
 
     // Stack and heap memory
     // Stack: boxes of different sizes
@@ -44,8 +42,21 @@ fn main() {
     // - Dynamically add and remove data
 
     // Pointer: is a data type that stores memory address
-    // Pointer is the inventory sheet that tells you where the specific box is stored in the shelf in the warehouseß
+    // Pointer is the inventory sheet that tells you where the specific box is stored in the shelf in the warehouse
 
+    // String data type
+    // String Literal:
+    // - Hard-coded into the executable
+    // - Imutable
+    // - Must be known before compilation
 
+    // String Type:
+    // - Allocated on the heap
+    // - Mutable
+    // - Dynamically generated at runtime
 
+    let mut message = String::from("Earth");
+    println!("message: {message}");
+    message.push_str(" is home");
+    println!("message: {message}");
 }
