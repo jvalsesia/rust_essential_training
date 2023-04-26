@@ -65,6 +65,7 @@ fn main() {
         println!("{index} - item is {item}");
     }
 
+    // &
     for (index, &item) in message.iter().enumerate() {
         println!("{index} - item is {item}");
         if item == 'e' {
@@ -74,5 +75,24 @@ fn main() {
 
     for number in 0..10 {
         println!("{number}");
+    }
+
+    // Nested loops
+    let mut matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+    for row in matrix.iter() {
+        for num in row.iter() {
+            print!("{num}\t"); // tab \t
+        }
+        println!();
+    }
+
+    // iter_mut() to modify values iterating with array
+    for row in matrix.iter_mut() {
+        for num in row.iter_mut() {
+            *num += 10; // dereference *
+            print!("{num}\t");
+        }
+        println!();
     }
 }
