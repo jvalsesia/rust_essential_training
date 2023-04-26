@@ -29,4 +29,23 @@ fn main() {
         println!("newPlanet is {newPlanet}");
     }
     println!("newPlanet is {newPlanet}");
+
+
+
+    // Stack and heap memory
+    // Stack: boxes of different sizes
+    // - Values stored in sequential order
+    // - Data added and removed as Last In, First Out (LIFO)
+    // - Data can be pushed and popped very quickly
+    // - All data must have a known, fixed size
+
+    // Heap: shelves in wareshouse that store boxes of different sizes
+    // - Adding and acessing data is slower that the Stack
+    // - Dynamically add and remove data
+
+    // Pointer: is a data type that stores memory address
+    // Pointer is the inventory sheet that tells you where the specific box is stored in the shelf in the warehouseß
+
+
+
 }
