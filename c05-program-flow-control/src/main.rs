@@ -95,4 +95,32 @@ fn main() {
         }
         println!();
     }
+
+    // Challenge: Max, min, mean
+    // mean = Sum of array elements / number of array elements
+    let challenge_numbers = [1, 9, -2, 0, 23, 20, -7, 13, 37, 20, 56, -18, 20, 3];
+    let mut max: i32;
+    let mut min: i32;
+    let mut mean: f64;
+
+    min = challenge_numbers[0];
+    max = challenge_numbers[0];
+    mean = 0.0;
+    for &n in challenge_numbers.iter() {
+        if n < min {
+            min = n;
+        } else if n > max {
+            max = n;
+        }
+        mean += n as f64;
+    }
+    mean /= challenge_numbers.len() as f64;
+
+    println!("min: {min}");
+    println!("max: {max}");
+    println!("mean: {mean}");
+    assert_eq!(max, 56);
+    assert_eq!(min, -18);
+    assert_eq!(mean, 12.5);
+    println!("Tests passed!");
 }
