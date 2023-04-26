@@ -73,6 +73,8 @@ fn main() {
         }
     }
 
+    // The range includes the starting bound of 0 and excludes the end bound of 10.
+    // 0 1 2 3 4 5 6 7 8 9
     for number in 0..10 {
         println!("{number}");
     }
