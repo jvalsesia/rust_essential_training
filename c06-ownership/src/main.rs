@@ -59,4 +59,15 @@ fn main() {
     println!("message: {message}");
     message.push_str(" is home");
     println!("message: {message}");
+
+    // Ownership
+    // Explicit Allocation and Deallocation:
+    // - Programmer is responsible for memory managment
+    // Garbage Collection
+    // - waste memory
+    // In Rust Ownership
+    // - variables are responsible for freeing their own resources
+    
+
+
 }
