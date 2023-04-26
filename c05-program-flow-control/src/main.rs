@@ -49,11 +49,30 @@ fn main() {
 
     // While loops
     let mut count2 = 0;
-    let letters =['a','b','c'];
-        while count2 < letters.len() {
+    let letters = ['a', 'b', 'c'];
+    while count2 < letters.len() {
         println!("letter is {}", letters[count2]);
         count2 += 1;
     }
 
+    // For loops
+    let message = ['h', 'e', 'l', 'l', 'o'];
+    for item in message {
+        println!("item is {item}");
+    }
 
+    for (index, item) in message.iter().enumerate() {
+        println!("{index} - item is {item}");
+    }
+
+    for (index, &item) in message.iter().enumerate() {
+        println!("{index} - item is {item}");
+        if item == 'e' {
+            break;
+        }
+    }
+
+    for number in 0..10 {
+        println!("{number}");
+    }
 }
