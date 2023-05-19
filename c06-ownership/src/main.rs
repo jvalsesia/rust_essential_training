@@ -55,6 +55,8 @@ fn main() {
     // - Mutable
     // - Dynamically generated at runtime
 
+    // Copying data on the stack occurs implicitly, whereas cloning data on the heap must be done explicitly using the clone method.
+
     let mut message = String::from("Earth");
     println!("message: {message}");
     message.push_str(" is home");
@@ -112,4 +114,36 @@ fn main() {
         println!("inner_planet_3: {inner_planet_3}");
     }
     println!("outer_planet_3: {outer_planet_3}");
+
+    // Transferring Ownership
+
+    let rocket_fuel = 1;
+    process_fuel(rocket_fuel);
+    println!("rocket fuel: {rocket_fuel}");
+
+    let rocket_fuel_2 = String::from("RP-1");
+    // here we need ot use clone beacuase rocket_fuel_2 is String and use HEAP
+    process_fuel_string(rocket_fuel_2.clone()); 
+    println!("rocket fuel 2: {rocket_fuel_2}");
+
+    let rocket_fuel_3 = String::from("RP-2");
+    // here we need to return a string tranferred in return
+    let rocket_fuel_3 = process_fuel_string_tranferred(rocket_fuel_3); 
+    println!("rocket fuel 3: {rocket_fuel_3}");
+    
+}
+
+fn process_fuel(mut propellant: i32) {
+    propellant += 1;
+    println!("processing propellant: {propellant}");
+}
+
+fn process_fuel_string(propellant: String) {
+    println!("processing propellant: {propellant}");
+}
+
+fn process_fuel_string_tranferred(propellant: String) -> String{
+    println!("processing propellant: {propellant}");
+    let new_fuel = String::from("LNG");
+    new_fuel
 }
