@@ -72,6 +72,24 @@ where
     }
 }
 
+// Return types with implemented traits
+fn get_displayable() -> impl fmt::Display {
+    // 15 // will work
+    // [15] won't work
+    "fifteen" // works
+}
+
+// Challenge: implement the display trait
+impl fmt::Display for Satellite {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "{} flying at {} miles per hour",
+            self.name, self.velocity
+        )
+    }
+}
+
 fn main() {
     let hubble = Satellite {
         name: String::from("Hublle Telescope"),
@@ -111,4 +129,14 @@ fn main() {
     // Multiple trait bounds
     compare_and_print(1.0, 1);
     compare_and_print(1.1, 1);
+
+    // Return types with implemented traits
+    println!("output is {}", get_displayable());
+
+    // Challenge: implement the display trait
+    let sat = Satellite {
+        name: String::from("Hubble"),
+        velocity: 4.72,
+    };
+    println!("huble is {sat}")
 }
